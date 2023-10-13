@@ -7,7 +7,27 @@ Les 31 à 50èmes KW sont à 20 centimes le KW
 Les 51 à 70èmes KW sont à 15 centimes le KW
 Les KW suivants sont à 10 centimes le KW
 */
-
+const kwCons = Number(prompt("Entrez votre consommation électrique en KW"));
+let prixTot;
+if(kwCons <= 30){
+    prixTot = (kwCons * 0.25);
+    console.log(`Le montant à payer s'élève à ${prixTot}€`);
+} else if(kwCons > 30 && kwCons <= 50){
+    prixTot = (30 * 0.25);
+    prixTot = prixTot + ((kwCons - 30) * 0.20);
+    console.log(`Le montant à payer s'élève à ${prixTot}€`);
+}else if(kwCons > 50 && kwCons <= 70) {
+    prixTot = (30 * 0.25);
+    prixTot = prixTot + (20 * 0.20);
+    prixTot = prixTot + ((kwCons - 50) * 0.15);
+    console.log(`Le montant à payer s'élève à ${prixTot}€`);
+} else {
+    prixTot = (30 * 0.25);
+    prixTot = prixTot + (20 * 0.20);
+    prixTot = prixTot + (20 * 0.15);
+    prixTot = prixTot + ((kwCons - 70) * 0.10);
+    console.log(`Le montant à payer s'élève à ${prixTot}€`);
+}
 /*
 Valeurs de test :
 - 30 KW => 750 centimes = 7.5 €

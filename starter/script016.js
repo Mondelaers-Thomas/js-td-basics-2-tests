@@ -51,9 +51,8 @@ console.log(`John boit des ${drink}`);
 3. Testez les différents cas de figure en changeant la profession de John
 */
 const job = "professeur";
-
 switch(job){
-    case "professeur":
+    case "professeur" :
     case "instituteur":
         console.log("John enseigne la programmation aux enfants");
         break
@@ -78,23 +77,20 @@ switch(job){
 3. Testez les différents cas de figure en changeant l'âge de John
 4. Testez avec un âge de 7 ans en enlevant la 2e instruction break pour voir ce que cela a comme impact
 */
-const ageJohn = 56;
-switch (ageJohn){
-    case ageJohn < 13:
+const ageJohn = 12;
+switch (true){
+    case (ageJohn < 13):
         console.log("John est un garçon");
         break
-    case ageJohn >= 13:
-    case ageJohn < 20:
+    case (ageJohn >= 13 && ageJohn <= 20):
         console.log("John est un adolescent");
         break
-    case ageJohn >= 20:
-    case ageJohn < 30:
+    case (ageJohn > 20 && ageJohn <= 30):
         console.log("John est un jeune homme");
         break
     default:
         console.log("John est un homme");
 }
-
 
 // Autre application de l'instruction switch
 

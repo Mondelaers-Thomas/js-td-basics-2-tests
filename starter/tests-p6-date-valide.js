@@ -26,4 +26,55 @@ Par exemple,
  - Il ne reste plus ensuite qu'à comparer le jour entré par l'utilisateur avec maxJour pour retourner true ou fasle
   selon que la date est valide ou pas.
   */
-  
+const maxJours = ["31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"];
+const date = prompt("Veuillez entrer date(jj-mm-aaaa)");
+const year = Number(date.substring(6));
+const month = date.substring(3, 5);
+const day = date.substring(0, 2);
+let isBissextile;
+let isDateValide;
+
+if (Number(day) > 31 || Number(month) > 12) {
+	isDateValide = false;
+	console.log(isDateValide);
+} else if (month === "02" && day === "29") {
+	if (year % 4 === 0) {
+		if (year % 100 === 0) {
+			if (year % 400 === 0) {
+				isBissextile = true; // divisible par 100 et par 400
+			} else {
+				isBissextile = false; // divisible par 100 mais pas par 400
+			}
+		} else {
+			isBissextile = true; // divisible par 4 mais pas par 100
+		}
+	} else {
+		isBissextile = false;
+	}
+	if (isBissextile) {
+		isDateValide = isBissextile;
+		console.log(isDateValide);
+	} else {
+		isDateValide = isBissextile;
+		console.log(isDateValide);
+	}
+} else if (day === "30") {
+	if (maxJours[Number(month) - 1] === "30") {
+		isDateValide = true;
+		console.log(isDateValide);
+	} else {
+		isDateValide = false;
+		console.log(isDateValide);
+	}
+} else if (day === "31") {
+	if (maxJours[Number(month) - 1] === "31") {
+		isDateValide = true;
+		console.log(isDateValide);
+	} else {
+		isDateValide = false;
+		console.log(isDateValide);
+	}
+} else {
+	isDateValide = true;
+	console.log(isDateValide);
+}

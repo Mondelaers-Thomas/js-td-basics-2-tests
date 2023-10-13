@@ -48,22 +48,22 @@ Etapes :
 	Au cas où vous n'auriez pas encore bien saisi la règle, on est bien d'accord que
 	2000 et 2004 sont bissextiles, 2006 et 2100 ne le sont pas :)
 */
-var year = Number(prompt("Entrez une année :"));
-var isBessextile;
+const year = Number(prompt("Entrez une année :"));
+let isBissextile;
 if (year % 4 === 0) {
 	if(year % 100 === 0) {
 		if(year % 400 === 0) {
-			isBessextile = true; // divisible par 100 et par 400
+			isBissextile = true; // divisible par 100 et par 400
 		} else{
-			isBessextile = false; // divisible par 100 mais pas par 400
+			isBissextile = false; // divisible par 100 mais pas par 400
 		}
 	} else {
-		isBessextile = true; // divisible par 4 mais pas par 100
+		isBissextile = true; // divisible par 4 mais pas par 100
 	}
 } else {
-  isBessextile = false;
+  isBissextile = false;
 }
-if(isBessextile){
+if(isBissextile){
 	console.log(year + " est une année bissextile");
 } else{
 	console.log(year + " est une année non bissextile");
